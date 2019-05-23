@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import AffinityPropagation
 import matplotlib
-matplotlib.use('Qt5Agg')
+# matplotlib.use('Qt5Agg')
 
 
 df = pd.read_csv(r'data\all2.csv', index_col=0)
@@ -22,9 +22,10 @@ cluster_result = [[] for i in range(n_clusters_)]
 for i in range(len(X)):
     cluster_result[labels[i]].append(list(df)[i])
 
-plt.close('all')    # 关闭所有的图形
-plt.figure(1)    # 产生一个新的图形
-plt.clf()    # 清空当前的图形
+# plt.close('all')    # 关闭所有的图形
+# plt.figure(1)    # 产生一个新的图形
+# plt.clf()    # 清空当前的图形
 
-plt.plot(df[list(df)[1]])
-plt.show()
+# 打印聚类结果
+# for i in range(16):
+#     print('聚类{}\n中心：{}\n成员：{}\n'.format(i+1, centers[i], cluster_result[i]))
