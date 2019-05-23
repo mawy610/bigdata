@@ -22,10 +22,13 @@ cluster_result = [[] for i in range(n_clusters_)]
 for i in range(len(X)):
     cluster_result[labels[i]].append(list(df)[i])
 
-# plt.close('all')    # 关闭所有的图形
-# plt.figure(1)    # 产生一个新的图形
-# plt.clf()    # 清空当前的图形
 
 # 打印聚类结果
 # for i in range(16):
 #     print('聚类{}\n中心：{}\n成员：{}\n'.format(i+1, centers[i], cluster_result[i]))
+
+for i in range(len(labels)):
+    plt.plot(list(df[centers[i]]))
+    plt.title('cluster{}, center: {}'.format(i + 1, centers[i]))
+    plt.savefig(r'img\cluster{}.jpg'.format(i + 1))
+    plt.close()
